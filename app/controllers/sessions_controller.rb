@@ -8,8 +8,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to welcome_path
     else
-      redirect_to welcome_path
-      #render :new
+      render :new
     end
   end
 end
