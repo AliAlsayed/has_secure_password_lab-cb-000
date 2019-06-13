@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(name: params[:name])
-    if user && user.authenticate(params[:password])
+    if !user.empty? && user.authenticate(params[:password])
       redirect_to welcome_path
     else
       render :new
