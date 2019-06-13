@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    fail
     user = User.find_by(name: params[:name])
     if user && user.authenticate(params[:password])
       redirect_to welcome_path
