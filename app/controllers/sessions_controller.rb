@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       redirect_to welcome_path
     else
       redirect_to welcome_path
-      render :new
+      #render :new
     end
   end
 end
