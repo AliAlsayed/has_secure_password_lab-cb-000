@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     fail
     user = User.find_by(name: params[:name])
-    if user && user.authenticate(params[:password])
+    if user && user.try(:authenticate, params[:password])
       redirect_to welcome_path
     else
       render :new
